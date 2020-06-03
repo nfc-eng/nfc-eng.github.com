@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SES"
+title:  "Using SES Custom Domain Verification"
 date:   2020-06-01 13:36:54 -0400
 categories: Technology, AWS
 ---
@@ -8,8 +8,6 @@ categories: Technology, AWS
 
 
  *All opinions are my own and not those of my employer*
-
-# Using SES to Send Email From a Custom Domain
 
 ### Prerequisites:
 * **Configure your custom domain in Route 53.** You can learn more about custom domains + AWS Route 53 [here](https://aws.amazon.com/getting-started/hands-on/get-a-domain/)
