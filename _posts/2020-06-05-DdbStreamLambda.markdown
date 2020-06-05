@@ -6,36 +6,41 @@ categories: Technology, AWS
 ---
 
 
-
  *All opinions are my own and not those of my employer*
  
- ### Introduction:
  
- This post is focused on using DynamoDb Streams as a notification mechanism to invoke AWS Lambda.
- 
- Some common use-cases for using DynamoDb Streams include:
- * Triggering an event when a certain type of update occurs to the database
- * Notifying another service upon a certain type of event in the database
- * Updating an audit trail upon a specific type of event in the database
- 
- [DDB Streams](https://docs.aws.amazon.com/amazonDynamoDb/latest/developerguide/Streams.html) are a mechanism designed to capture all of the above use-cases and more. From the AWS Docs: 
- > A DynamoDb stream is an ordered flow of information about changes to items in a DynamoDb table. When you enable a stream on a table, DynamoDb captures information about every modification to data items in the table. 
+### Introduction:
  
  
- ### DynamoDb Stream + Lambda Components
- When setting up an AWS lambda function to consume DynamoDb Stream events there are **4 primary components** that come to mind.  I have linked to the CloudFormation documentation for each of the resources. We have:
  
- [**DynamoDb Table**](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html): The table that we are listening to for updates or changes.
+This post is focused on using DynamoDb Streams as a notification mechanism to invoke AWS Lambda.
+
+Some common use-cases for using DynamoDb Streams include:
+* Triggering an event when a certain type of update occurs to the database
+* Notifying another service upon a certain type of event in the database
+* Updating an audit trail upon a specific type of event in the database
+
+[DDB Streams](https://docs.aws.amazon.com/amazonDynamoDb/latest/developerguide/Streams.html) are a mechanism designed to capture all of the above use-cases and more. From the AWS Docs: 
+> A DynamoDb stream is an ordered flow of information about changes to items in a DynamoDb table. When you enable a stream on a table, DynamoDb captures information about every modification to data items in the table. 
  
- [**DynamoDb Stream**](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-streamspecification): Think of this as the event bus that notifications travel along when an event is detected against the DynamoDb Table.
- 
- [**Lambda Event Source Mapping**](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-maximumretryattempts): This is the component that tells the Lambda Function what event source to monitor and consume from. Without this association the Lambda Function will never be invoked by the events flowing on the DynamoDb Stream.
- 
- [**Lambda Function**](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html): This is the function that will be invoked whenever a new event is detected on the DynamoDb Stream. This is the compute resource that allows us to insert custom logic when invoked.
  
  
- To be clear, the flow of data is ->DynamoDbTable -> DynamoDbStream -> LambdaFunction
+### DynamoDb Stream + Lambda Components
  
+ 
+When setting up an AWS lambda function to consume DynamoDb Stream events there are **4 primary components** that come to mind.  I have linked to the CloudFormation documentation for each of the resources. We have:
+
+[**DynamoDb Table**](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html): The table that we are listening to for updates or changes.
+
+[**DynamoDb Stream**](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-streamspecification): Think of this as the event bus that notifications travel along when an event is detected against the DynamoDb Table.
+
+[**Lambda Event Source Mapping**](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-maximumretryattempts): This is the component that tells the Lambda Function what event source to monitor and consume from. Without this association the Lambda Function will never be invoked by the events flowing on the DynamoDb Stream.
+
+[**Lambda Function**](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html): This is the function that will be invoked whenever a new event is detected on the DynamoDb Stream. This is the compute resource that allows us to insert custom logic when invoked.
+
+
+To be clear, the flow of data is ->DynamoDbTable -> DynamoDbStream -> LambdaFunction
+
 
 ### Exception Handling
 
