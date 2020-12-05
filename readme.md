@@ -1,6 +1,10 @@
-### Setup
+### Setup:
 * Installed ruby 2.7+
 * Had to tweak the path after using brew to install it on osX
+
+### Development:
+To run locally: `bundle exec jekyll serve --livereload`
+
 
 ### Future posts:
 * Poison Pill - what is it - how can you try to protect against it when using AWS
