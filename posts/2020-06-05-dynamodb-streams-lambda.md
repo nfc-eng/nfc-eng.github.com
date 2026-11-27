@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "Using AWS Dynamo DB Streams with AWS Lambda"
-date:   2020-06-01 13:36:54 -0400
+title: "Using AWS Dynamo DB Streams with AWS Lambda"
+date: 2020-06-05 13:36:54 -0400
 categories: Technology, AWS
+permalink: /writing/dynamodb-streams-lambda/
 ---
 
 

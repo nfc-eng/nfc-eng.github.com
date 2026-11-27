@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "Using SES Custom Domain Verification"
-date:   2020-06-01 13:36:54 -0400
+title: "Using SES Custom Domain Verification"
+date: 2020-06-04 13:36:54 -0400
 categories: Technology, AWS
+permalink: /writing/ses-custom-domain/
 ---
 
 
