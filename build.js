@@ -447,17 +447,14 @@ function postPage(post) {
 }
 
 function aboutPage() {
+  // Update this bio anytime. The 2020 about copy was dropped because it is out of date.
+  // The old photo is still in the repo at selfie.JPG if you want it on this page.
+
   const body = `
     <div class="page-head">
       <h1>About</h1>
       <p class="dek">I'm a software engineer. I build side projects in my spare time.</p>
     </div>
-    <!--
-      TODO: Nicholas, update this bio.
-      The 2020 about page said you were a software engineer at AWS and linked HottestHappyHours.
-      That copy is gone because it is out of date. Add a current role, a city, or anything else you want.
-      The old photo is still in the repo at selfie.JPG if you want it on this page.
-    -->
     <section class="prose">
       <p>The projects on this site are the public ones. Most of the repositories are private.</p>
     </section>`;

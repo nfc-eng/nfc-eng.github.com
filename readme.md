@@ -25,7 +25,7 @@ That is the command Vercel runs. Output goes to `dist/`.
 
 - Projects: the `PROJECTS` list in `build.js`. Link live sites only. Teeter is the one public repo, so it is the only project with a source link.
 - Posts: add a markdown file in `posts/` with `title`, `date`, `categories`, and a `permalink` under `/writing/`.
-- About: `aboutPage()` in `build.js`. There is a TODO comment in the generated about page.
+- About: `aboutPage()` in `build.js`. The 2020 copy was dropped as out of date; the old photo is still at `selfie.JPG` if you want it on the page.
 
 ## Notes from 2020
 
