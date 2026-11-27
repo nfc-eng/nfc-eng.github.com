@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "First Post"
-date:   2020-05-26 13:36:54 -0400
+title: "First Post"
+date: 2020-05-26 13:36:54 -0400
 categories: General
+permalink: /writing/welcome-to-my-blog/
 ---
 
 This is the first post on my blog, decided to do this as I have been meaning to for a long while.
