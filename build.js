@@ -71,7 +71,6 @@ const PROJECTS = [
   {
     id: "ape-odds",
     name: "Ape Odds",
-    kicker: "Current startup",
     href: "https://finance-quant-phi.vercel.app",
     image: "ape-odds.png",
     frame: "landscape",
@@ -397,7 +396,7 @@ function projectsPage() {
   const body = `
     <div class="page-head">
       <h1>Projects</h1>
-      <p class="dek">Ape Odds is my current startup. The others are side projects. Each card links to the live site.</p>
+      <p class="dek">Each card links to the live site.</p>
     </div>
     <section>
       <div class="cards">${cards}</div>
@@ -405,7 +404,7 @@ function projectsPage() {
   return pageShell({
     pathname: "/projects/",
     title: "Projects",
-    description: "Side projects I've shipped, each with a link to the live site. Ape Odds is my current startup.",
+    description: "Side projects I've shipped, each with a link to the live site.",
     body,
   });
 }
@@ -499,7 +498,7 @@ function assertSite(htmlByPath) {
     /nicholasclement\.com/i,
     /Nicholas is\b/,
     /Nicholas Clement is\b/,
-    /his startup/i,
+    /startup/i,
     /\bhe builds\b/i,
     /HottestHappyHours/i,
     /Software Engineer at AWS/i,
